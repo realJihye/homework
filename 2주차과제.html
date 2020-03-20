@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+    <title>(2주차)코로나 마스크 구매</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .card {
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px;
+            background-image: url('https://cdn.shopify.com/s/files/1/0910/5154/files/AirMask_Classics_750x.jpg?v=1559142383');
+            font-size: 20p;
+        }
+
+        .container {
+            width: 500px;
+            margin: auto;
+        }
+    </style>
+
+
+    <script>
+
+        function q() {
+            let txtName = $('#name').val();
+            let txtNum = $('#number').val();
+            let txtAddress = $('#address').val();
+            let txtPhone = $('#phonenumber').val();
+            if (txtName === '') {
+                alert('이름을 입력해주세요~');
+            } else if (txtNum === '') {
+                alert('수량을 입력해주세요~')
+            } else if (txtAddress === '') {
+                alert('주소를 입력해주세요~');
+            } else if (txtPhone === '') {
+                alert('전화번호를 입력해주세요~');
+            } else if (isPhone(txtPhone) === false) {
+                alert('전화번호를 제대로 입력해주세요~');
+            } else {
+                alert('주문이 완료되었습니다~')
+            }
+
+        }
+
+        function isPhone(p) {
+            p = p.split('-').join('');
+
+            var regPhone = /^((01[1|6|7|8|9])[1-9]+[0-9]{6,7})|(010[1-9][0-9]{7})$/;
+
+            return regPhone.test(p);
+
+        }
+
+           // 1. input-q1의 입력값을 가져온다.
+            // 2. 만약 입력값이 빈칸이면 if(입력값=='')
+            // 3. alert('입력하세요!') 띄우기
+            // 4. alert(입력값) 띄우기
+
+
+
+    </script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="wrap">
+            <!-- <img src="https://cdn.shopify.com/s/files/1/0910/5154/files/AirMask_Classics_750x.jpg?v=1559142383"
+                alt="Card image cap"> -->
+            <div class="card">
+
+            </div>
+            <h5>만세 마스크</h5>
+            <h6>세장에만원</h6>
+            <p>소량긴급공수 고성능3중필터</p>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="order-name">주문자이름</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" id="name">
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01">수량</label>
+            </div>
+            <select class="custom-select" id="number">
+                <option selected></option>
+                <option value="1">세장</option>
+                <option value="2">여섯장</option>
+                <option value="3">아홉장</option>
+            </select>
+        </div>
+        <!-- <div class="input-group mb-3">
+                <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon2">수량</span>
+                </div>
+                <input type="text" class="form-control" placeholder="Recipient's username"
+                    aria-label="Recipient's username" aria-describedby="basic-addon2">
+
+            </div> -->
+
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">주소</span>
+            </div>
+            <input type="text" class="form-control" id="address" aria-describedby="basic-addon3">
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">전화번호</span>
+            </div>
+            <textarea class="form-control" aria-label="With textarea" id="phonenumber"></textarea>
+        </div>
+        <button type="button" onclick="q()" class="btn btn-primary">구매고고</button>
+        <!-- <a href="http://browse.gmarket.co.kr/search?keyword=%eb%a7%88%ec%8a%a4%ed%81%ac&jaehuid=200001102"
+            class="btn btn-primary">구매고고</a> -->
+
+
+    </div>
+    </div>
+</body>
+
+</html>
